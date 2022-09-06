@@ -1,23 +1,19 @@
 import java.util.Scanner;
-
 public class AbundantNumber {
     public static void main(String[] args) {
-        int n, i, sum = 0, x;
+        int i, sum = 0;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter any Number: ");
-        n = sc.nextInt();
-        for (i = 1; i < n; i++) ;
-        {
-            if (n % i == 0) {
+        System.out.println("Enter the number to check");
+        int num = sc.nextInt();
+        for (i = 1; i < num; i++) {
+            if (num % i == 0) {
                 sum = sum + i;
             }
         }
-        if (sum > n) {
-            System.out.println("It is a Abundant Number: " + n);
-            x = sum + i;
-            System.out.println("Abundant Number : " + x);
-        } else {
-            System.out.println("It is not a Abundant Number: " + n);
-        }
+        if (sum > num)
+            System.out.println("Abundant number");
+        else
+            System.out.println("Not an Abundant number");
     }
 }
+

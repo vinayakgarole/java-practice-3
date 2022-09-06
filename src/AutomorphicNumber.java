@@ -1,16 +1,22 @@
 import java.util.Scanner;
-
 public class AutomorphicNumber {
     public static void main(String[] args) {
-        System.out.println("Enter any Number: ");
+
+        int p = 0, d = 10;
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number to check");
+
         int n = sc.nextInt();
-        int l = ("" + n).length();
         int sq = n * n;
-        int end = sq % (int) Math.pow(10, l);
-        if (n == end)
-            System.out.println("Automorphic Number");
+
+        while (p < n) {
+            p = sq % d;
+            d = d * 10;
+        }
+
+        if (p == n)
+            System.out.println(n + " is automorphic");
         else
-            System.out.println("Not a Automarphic Number");
+            System.out.println(n + " is not automorphic");
     }
 }
